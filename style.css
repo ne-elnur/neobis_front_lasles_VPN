@@ -8,6 +8,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: sticky;
     background-color: #fff;
     color: #000;
     padding: 20px;
@@ -27,7 +28,9 @@ header {
     font-size: 20px;
     line-height: 24px;
 }
-
+b {
+    font-weight: 700;
+}
 nav li {
     display: inline-block;
 }
@@ -41,7 +44,9 @@ nav li a {
     cursor: pointer;
 }
 nav li a:hover {
-    background-color: lightgray;
+    background-color: #F8F8F8;
+    color: red;
+    box-shadow: 0 10px 20px rgba(56, 56, 56, 0.25);
 }
 button {
     background-color: white;
@@ -57,64 +62,148 @@ button {
     cursor: pointer;
     margin-left: 10px;
 }
-.sign-in{
+.blueButton {
     background-color: white;
     color: #000;
 }
-.sign-in:hover {
+.blueButton:hover {
     background-color: lightskyblue;
     color: white;
+    box-shadow: 0 10px 20px rgba(56, 56, 245, 0.25);
 }
-.sign-up {
+.redButton {
     background-color: white;
     color: #F53855;
     border: 2px solid #F53855;
 }
-.sign-up:hover {
+.redButton:hover {
     background-color: #f44336;
     color: white;
+    box-shadow: 0 10px 20px rgba(245, 56, 56, 0.25);
 }
 section {
     height: 100vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+.titleBlock{
+    width: 36%;
 }
-section p {
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+.titleBlock li{
+    list-style-image: url("SVG/checkMark.svg");
+    list-style-type: circle;
+    padding-left: 5px;
+}
+.titleBlock ul{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+}
+.titleAbout {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 70px;
+    color: #0B132A;
+}
+.titleBlockCenter {
+    width: 38%;
+}
+.titleLeft {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50px;
+    color: #0B132A;
+}
+.titleCenter{
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 50px;
+    color: #0B132A;
     text-align: center;
-    max-width: 800px;
 }
-.About{
+.subTitle {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #4F5665;
+    text-align: left;
+}
+.subTitleCenter {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #4F5665;
+    text-align: center;
+}
+.About {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
 }
-.illustration1{
-    height: 50%;
+.features {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
 }
-.copyright{
+.PlanPackages {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.Testimonials {
+    height: 160vh;
+    display: flex;
+    align-items: center;
+}
+.illustration1 {
+    width: 100%;
+}
+.testimonialsImg {
+    max-width: 75%;
+}
+.SubscribeBlock {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    background-color: grey; /*#FFFFFF;*/
+    width: 80%;
+    right: 10%;
+    top: -116px;
+    height: 233px;
+}
+.copyright {
     color: #AFB5C0;
 }
 footer {
     display: flex;
     justify-content: space-evenly;
-    background-color: #333;
-    color: #fff;
+    position: relative;
+    z-index: 1;
+    background-color: #F8F8F8;
     padding: 20px;
+    padding-top: 120px;
     text-align: center;
 }
-.footer-element1{
+.footer-element1 {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     margin-right: 150px;
 }
-.footer-element2{
+.footer-element2 {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
