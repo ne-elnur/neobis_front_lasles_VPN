@@ -1,3 +1,15 @@
+@font-face {
+    font-family: Rubik;
+    src: url(Fonts/rubik/Rubik-Regular.ttf) format("truetype");
+    font-weight: 500;
+    font-variant: normal;
+}
+@font-face {
+    font-family: Rubik;
+    src: url(Fonts/rubik/Rubik-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-variant: normal;
+}
 body {
     font-family: Rubik, sans-serif;
     margin: 0;
@@ -53,7 +65,7 @@ button {
     border: none;
     border-radius: 30px;
     color: white;
-    padding: 16px 32px;
+    padding: 16px 52px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -76,10 +88,16 @@ button {
     color: #F53855;
     border: 2px solid #F53855;
 }
+.redButton.Starter {
+    height: 60px;
+    padding: 16px 80px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
 .redButton:hover {
     background-color: #f44336;
     color: white;
-    box-shadow: 0 10px 20px rgba(245, 56, 56, 0.25);
+    box-shadow: 0 10px 20px rgba(245, 56, 56, 0.5);
 }
 section {
     height: 100vh;
@@ -91,19 +109,19 @@ section {
     width: 36%;
 }
 .titleBlock li{
-    list-style-image: url("SVG/checkMark.svg");
+    list-style-image: url("SVG/circleCheckMark.svg");
     list-style-type: circle;
     padding-left: 5px;
 }
 .titleBlock ul{
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 40px;
 }
 .titleAbout {
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 50px;
@@ -114,7 +132,7 @@ section {
     width: 38%;
 }
 .titleLeft {
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 35px;
@@ -122,7 +140,7 @@ section {
     color: #0B132A;
 }
 .titleCenter{
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 35px;
@@ -131,7 +149,7 @@ section {
     text-align: center;
 }
 .subTitle {
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -140,7 +158,7 @@ section {
     text-align: left;
 }
 .subTitleCenter {
-    font-family: 'Rubik';
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -148,10 +166,15 @@ section {
     color: #4F5665;
     text-align: center;
 }
-.About {
+section.About {
     display: flex;
     justify-content: space-evenly;
+    align-items: flex-start;
     flex-direction: row;
+}
+.SubscribeBlock.stats {
+    box-shadow: 0 10px 20px rgba(56, 56, 56, 0.1);
+    margin-top: 50%;
 }
 .features {
     display: flex;
@@ -163,26 +186,172 @@ section {
     justify-content: space-evenly;
     flex-direction: row;
 }
-.Testimonials {
-    height: 160vh;
+.planPackage {
+    box-sizing: border-box;
+    width: 330px;
+    height: 760px;
+    border: 3px solid #e8e8e8;
+    display: inline-block;
+    text-align: center;
+    float: left;
+    position: relative;
+    margin: 50px 30px 10px 30px;
+    --c: #f44336; /* the border color */
+    --b: 5px;    /* the border thickness*/
+    --g: 5px;     /* the gap on hover */
+
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%,var(--c) 0;
+    background:
+            conic-gradient(from 180deg at top    var(--b) right var(--b),var(--_g))
+            var(--_i,200%) 0  /200% var(--_i,var(--b))  no-repeat,
+            conic-gradient(            at bottom var(--b) left  var(--b),var(--_g))
+            0   var(--_i,200%)/var(--_i,var(--b)) 200%  no-repeat;
+    transition: .3s, background-position .3s .3s;
+    cursor: pointer;
+}
+.planPackage:hover {
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
+    box-shadow: 0 10px 20px rgba(245, 56, 56, 0.4);
+}
+.planPackage li {
+    list-style-image: url("SVG/checkMark.svg");
+    text-align: left;
+    margin-left: 65px;
+}
+.planPackage ul {
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+}
+.freePrice {
+    margin-top: 110px;
+}
+.standardPrice {
+    margin-top: 80px;
+}
+.premiumPrice {
+    margin-top: 50px;
+}
+.PricingTestimonials {
+    height: 150vh;
     display: flex;
     align-items: center;
+    flex-direction: column;
+}
+.PlanPackages.feedbacks {
+    margin-top: -3%;
+}
+.planPackage.feedback {
+    height: 230px;
+}
+.testimonialsNav {
+    display: inline-flex;
+    align-items: center;
+    width: 75%;
+    margin-top: 60px;
+}
+.currentComments {
+    width: 40px;
+    height: 15px;
+    background-color: #f44336;
+    border-radius: 50px;
+}
+.otherComments {
+    width: 15px;
+    height: 15px;
+    background-color: #DDE0E4;
+    border-radius: 50px;
+    margin-left: 15px;
+}
+.redButton.left {
+    padding: 15px 15px;
+    border-radius: 70px;
+    margin-left: 77%;
+}
+.redButton.right {
+    padding: 15px 15px;
+    border-radius: 70px;
+}
+.leftArrow,
+.rightArrow {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+.leftArrow::before,
+.rightArrow::before,
+.leftArrow::after,
+.rightArrow::after {
+    content: '';
+    position: absolute;
+}
+.leftArrow::before,
+.rightArrow::before {
+    width: 20px;
+    height: 3px;
+    background-color: #f44336;
+    top: 9.5px;
+}
+.leftArrow::after,
+.rightArrow::after {
+    width: 15px;
+    height: 15px;
+}
+.leftArrow::after {
+    border-top: 3px solid #f44336;
+    border-left: 3px solid #f44336;
+    transform: rotate(-45deg);
+    top: 2px;
+    left: 2px;
+}
+.rightArrow::after {
+    border-top: 3px solid #f44336;
+    border-left: 3px solid #f44336;
+    transform: rotate(135deg);
+    top: 2px;
+    left: 2px;
+}
+.leftArrow:hover::before,
+.rightArrow:hover::before {
+    background-color: white;
+}
+.leftArrow:hover::after,
+.rightArrow:hover::after {
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+}
+.imgBlock {
+    width: 40%;
 }
 .illustration1 {
-    width: 100%;
+    width: 110%;
+}
+.illustrationPrice {
+    width: 45%;
+    margin-top: 97px;
 }
 .testimonialsImg {
+    margin-top: 5%;
     max-width: 75%;
 }
 .SubscribeBlock {
     display: flex;
     position: absolute;
+    border-radius: 10px;
     z-index: 2;
-    background-color: grey; /*#FFFFFF;*/
+    background-color: #ffffff;
     width: 80%;
     right: 10%;
     top: -116px;
     height: 233px;
+    align-items: center;
+    justify-content: space-around;
 }
 .copyright {
     color: #AFB5C0;
@@ -195,13 +364,12 @@ footer {
     background-color: #F8F8F8;
     padding: 20px;
     padding-top: 120px;
-    text-align: center;
 }
 .footer-element1 {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    margin-right: 150px;
+    width: 30%;
 }
 .footer-element2 {
     display: flex;
